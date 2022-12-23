@@ -138,8 +138,11 @@ And now we can consume the services whereever needed (e.g. from .razor file):
         this.result = await DataConsumptionService.GetDatasFromGrpc();
     }
 }
-
 ```
+For Running the application, Multiple Startups needed as shown below
+![image](https://user-images.githubusercontent.com/34203838/209351581-9a2e9740-2998-4828-baf3-757b85472b0b.png)
+
+
 # References, Credits
 * [Use gRPC in browser apps | Microsoft Docs](https://docs.microsoft.com/en-us/aspnet/core/grpc/browser)
 * [protobuf-net.Grpc - Getting Started](https://protobuf-net.github.io/protobuf-net.Grpc/gettingstarted)
