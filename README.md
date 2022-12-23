@@ -142,6 +142,11 @@ And now we can consume the services whereever needed (e.g. from .razor file):
 For Running the application, Multiple Startups needed as shown below
 ![image](https://user-images.githubusercontent.com/34203838/209351581-9a2e9740-2998-4828-baf3-757b85472b0b.png)
 
+After Running,
+You should get the results from CSV File!
+
+![image](https://user-images.githubusercontent.com/34203838/209354175-5e10819c-17d4-4430-8241-f083f1069d7f.png)
+
 
 # References, Credits
 * [Use gRPC in browser apps | Microsoft Docs](https://docs.microsoft.com/en-us/aspnet/core/grpc/browser)
