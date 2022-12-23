@@ -1,0 +1,65 @@
+﻿@page "/fetchdata"
+@using BlazorGrpcWebApp.Shared.Interfaces
+@using System.Net.Http.Json
+@using BlazorGrpcWebApp.Shared
+@inject HttpClient Http
+@using ProtoBuf.Grpc.Client
+@inject IDataService DataConsumptionService
+
+<tr>
+    <td>GPRC SAMPLE PROJECT</td>
+</tr>
+
+
+@if (result == null)
+{
+    <p><em> Please click the button below to fetch data...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>MeterUsage</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var forecast in result)
+            {
+                <tr>
+                    <td>@forecast.Time</td>
+                    <td>@forecast.Meterusage</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+
+<button @onclick="LoadRemoteData">GET GRPC DATA FROM SERVER</button>
+
+@code
+{
+    List<PostData>? result;
+
+    async Task Submit()
+    {
+        this.result = await DataConsumptionService.GetDatasFromGrpc();
+    }
+}
+
+
+@code {
+    //protected override async Task OnInitializedAsync()
+    //{
+    //    await LoadRemoteData();
+    //}
+    async Task LoadRemoteData()
+    {
+        this.result = await DataConsumptionService.GetDatasFromGrpc();
+    }
+}
+
+

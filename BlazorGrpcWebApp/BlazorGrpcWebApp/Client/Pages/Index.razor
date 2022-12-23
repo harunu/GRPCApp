@@ -1,0 +1,29 @@
+﻿@page "/"
+@using BlazorGrpcWebApp.Shared.Interfaces
+@using BlazorGrpcWebApp.Shared;
+@inject IMyService MyService
+
+<EditForm Model="@request" OnValidSubmit="Submit">
+	<InputText @bind-Value="request.Text" />
+	<InputNumber @bind-Value="request.Value" />
+	<input type="submit" value="Submit" />
+</EditForm>
+
+@if (result != null)
+{
+	@result.NewText
+	<br />
+	@result.NewValue
+	<br />
+}
+
+@code
+{
+	MyServiceRequest request = new MyServiceRequest() { Text = "Hello GRPC ", Value = 1 };
+	MyServiceResult? result;
+
+	async Task Submit()
+	{
+		this.result = await MyService.DoSomething(request);
+	}
+}

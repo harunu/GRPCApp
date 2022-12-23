@@ -1,0 +1,28 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+
+
+option csharp_namespace = "GrpcService.Protos";
+
+
+package datas;
+
+service DatasService {
+
+rpc GetUsageData(Request) returns (stream UsageDataModel) {}
+ 
+}
+
+
+message Request{
+string filters=1;
+
+}
+
+
+message UsageDataModel {
+  google.protobuf.Timestamp Time = 1;
+  string meterusage = 2;    
+}
+
+ 
