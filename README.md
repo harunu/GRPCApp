@@ -1,4 +1,4 @@
-# Blazor WebAssembly with gRPC Server
+# Blazor WebAssembly with gRPC 
 gRPC-Web has been used in a WCF-like approach and cover communication in between ASP.NET Core service and Blazor WebAssembly client.  
 
 ## 1. Prepare the GRPC Service - GRPC Service
